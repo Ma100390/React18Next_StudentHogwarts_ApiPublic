@@ -1,0 +1,257 @@
+
+.home-container1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 100vh;
+  font-family: "Cinzel", serif;
+  background: radial-gradient(circle at center, #0d0d0d 0%, #000 100%);
+  overflow: hidden;
+}
+
+.home-container1::before,
+.home-container1::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05), transparent 60%);
+  animation: floatFog 60s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Cinzel", serif;
+  background: radial-gradient(circle at center, #0d0d0d 0%, #000 100%);
+  overflow: hidden;
+}
+
+.home-container::before,
+.home-container::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05), transparent 60%);
+  animation: floatFog 60s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+@keyframes floatFog {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(10%, -10%) scale(1.1);
+  }
+}
+
+.title,
+.buttons-container {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.house-button {
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.house-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+/* Colori per le casate con sfumatura coerente */
+.gryffindor {
+  background: linear-gradient(180deg, #4a0303 0%, #d3a625 100%);
+}
+
+.hufflepuff {
+  background: linear-gradient(180deg, #000000 0%, #f5d547 100%);
+}
+
+.ravenclaw {
+  background: linear-gradient(180deg, #0a0a5a 0%, #b08d57 100%);
+}
+
+.slytherin {
+  background: linear-gradient(180deg, #1a472a 0%, #7aa57a 100%);
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Colori dinamici per le case */
+.home-container.gryffindor li:hover {
+  box-shadow: 0 0 20px rgba(211, 166, 37, 0.6);
+}
+
+.home-container.hufflepuff li:hover {
+  box-shadow: 0 0 20px rgba(240, 220, 100, 0.6);
+}
+
+.home-container.ravenclaw li:hover {
+  box-shadow: 0 0 20px rgba(120, 140, 255, 0.6);
+}
+
+.home-container.slytherin li:hover {
+  box-shadow: 0 0 20px rgba(100, 255, 150, 0.6);
+}
+
+/* Animazione di ingresso */
+li {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.student-container {
+  text-align: center;
+}
+
+.student-name {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.student-name:hover {
+  color: #d3a625;
+}
+
+.arrow {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.student-card {
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-light {
+  position: relative;
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(180deg, #f9e79f 0%, #d4ac0d 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 230, 120, 0.4);
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.btn-light:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 230, 120, 0.8);
+  background: linear-gradient(180deg, #fff3b0 0%, #d4ac0d 100%);
+}
+
+.btn-light:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 10px rgba(255, 230, 120, 0.5);
+}
+
+
+
